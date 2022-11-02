@@ -5,7 +5,7 @@ type PaginationPropsType = {}
 export const Pagination: FC<PaginationPropsType> = ({}) => {
   return (
     <div
-      className="flex justify-between items-center w-[515px] h-[52px] bg-backgroundSecondary md:bg-white rounded-lg shadow-[2px_1px_7px_rgba(0,_0,_0,_0.08),_0px_2px_1px_-1px_rgba(0,_0,_0,_0.04),_0px_1px_3px_rgba(0,_0,_0,_0.12)] my-12 px-6">
+      className="flex justify-between items-center sm:w-[515px] h-[52px] bg-backgroundSecondary md:bg-white rounded-lg shadow-[2px_1px_7px_rgba(0,_0,_0,_0.08),_0px_2px_1px_-1px_rgba(0,_0,_0,_0.04),_0px_1px_3px_rgba(0,_0,_0,_0.12)] my-12 px-6">
       <div className="flex justify-between items-center space-x-8">
         <svg className="hover:cursor-pointer" width="12" height="18" viewBox="0 0 12 18" fill="none"
              xmlns="http://www.w3.org/2000/svg">
@@ -19,7 +19,7 @@ export const Pagination: FC<PaginationPropsType> = ({}) => {
       </div>
 
       {/*template pagination*/}
-      <pre className="text-xl font-bold text-[#70778B] tracking-widest hover:cursor-pointer">1 2 3 4 5 ... 18</pre>
+      <pre className="text-xl mx-2 font-bold text-[#70778B] tracking-widest hover:cursor-pointer">1 2 3 4 5 ... 18</pre>
 
       <div className="flex justify-between items-center space-x-8">
         <svg width="2" height="32" viewBox="0 0 2 32" fill="none" xmlns="http://www.w3.org/2000/svg">
