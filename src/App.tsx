@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
-import { ItemType } from './api/types';
+import { ContextType, ItemType } from './api/types';
 import { API } from './api/api';
 import { ProjectRoutes } from './components/common/ProjectRoutes';
 import dayjs from 'dayjs';
@@ -8,7 +8,7 @@ import { ErrorMessage } from './components/common/ErrorMessage';
 import axios from 'axios';
 import { Loading } from './components/common/Loading';
 
-export const DataContext = React.createContext<any>(null);
+export const DataContext = React.createContext<ContextType>({} as ContextType);
 
 function App() {
 
