@@ -9,6 +9,7 @@ module.exports = {
         backgroundSm: '#e6e9f2',
         fontPrimary: '#3a4562',
         fontSecondary: '#878d9d',
+        hoverColor: '#5876c5',
       },
       listStyleType: {
         square: 'square',

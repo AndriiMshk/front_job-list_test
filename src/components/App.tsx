@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import './App.css';
-import { ContextType, ItemType } from './api/types';
-import { API } from './api/api';
-import { ProjectRoutes } from './components/common/ProjectRoutes';
+import { ContextType, ItemType } from '../api/types';
+import { API } from '../api/api';
+import { ProjectRoutes } from './common/ProjectRoutes';
 import dayjs from 'dayjs';
-import { ErrorMessage } from './components/common/ErrorMessage';
+import { ErrorMessage } from './common/ErrorMessage';
 import axios from 'axios';
-import { Loading } from './components/common/Loading';
+import { Loading } from './common/Loading';
 
 export const DataContext = React.createContext<ContextType>({} as ContextType);
 
@@ -16,12 +15,17 @@ function App() {
   const [data, setData] = useState<ItemType[]>([]);
   const [error, setError] = useState('');
 
+
   const getItems = async() => {
     try {
       setIsLoading(true);
       const res = await API.getItems();
       setData(res.data.map(
-        el => ({ ...el, rating: Math.floor(Math.random() * 5), diffDate: dayjs().diff(dayjs(el.createdAt), 'day') })));
+        el => ({
+          ...el,
+          rating: Math.floor(Math.random() * 5),
+          diffDate: dayjs().diff(dayjs(el.createdAt), 'day'),
+        })));
     } catch (e) {
       axios.isAxiosError(e)
         ? e && setError(e.message)

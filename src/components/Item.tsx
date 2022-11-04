@@ -15,6 +15,7 @@ type ItemPropsType = {
 export const Item: FC<ItemPropsType> = ({ item, setError, setIsLoading }) => {
 
   const navigate = useNavigate();
+
   const [point, setPoint] = useState('');
 
   const getPoint = async() => {

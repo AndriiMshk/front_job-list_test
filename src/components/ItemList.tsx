@@ -1,15 +1,24 @@
-import React, { useContext } from 'react';
-import { ContextType } from '../api/types';
+import React, { FC } from 'react';
+import { ItemType } from '../api/types';
 import { Item } from './Item';
-import { DataContext } from '../App';
 
-export const ItemList = () => {
+type ItemListPropsType = {
+  currentData: ItemType[]
+  setError: (error: string) => void
+  setIsLoading: (isLoading: boolean) => void
+}
 
-  const { data, setError, setIsLoading } = useContext<ContextType>(DataContext);
+export const ItemList: FC<ItemListPropsType> = ({ currentData, setError, setIsLoading }) => {
 
   return (
     <div className="space-y-2 pt-7 max-w-[1140px] container mx-auto">
-      {data.map(item => <Item key={item.id} item={item} setError={setError} setIsLoading={setIsLoading} />)}
+      {currentData.map(item =>
+        <Item
+          key={item.id}
+          item={item}
+          setError={setError}
+          setIsLoading={setIsLoading}
+        />)}
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { useParams } from 'react-router-dom';
-import { DataContext } from '../App';
+import { DataContext } from './App';
 import { ContextType } from '../api/types';
 import { Button } from './common/Button';
 import { Employment } from './common/Employment';
