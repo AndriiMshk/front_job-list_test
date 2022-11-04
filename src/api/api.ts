@@ -1,20 +1,22 @@
 import axios from 'axios';
 import { ItemType, ParamsType } from './types';
+import { GET_POINT_API_KEY, ITEMS_BASE_URL, POINTS_BASE_URL } from './env';
 
-const instance = axios.create({
-  baseURL: 'https://api.json-generator.com/templates/ZM1r0eic3XEy',
+const instanceItems = axios.create({
+  baseURL: ITEMS_BASE_URL,
+});
+
+const instancePoints = axios.create({
+  baseURL: POINTS_BASE_URL,
 });
 
 export const API = {
   getItems() {
-    return instance.get<ItemType[]>(`/data`,
-      { params: { access_token: 'wm3gg940gy0xek1ld98uaizhz83c6rh2sir9f9fu' } });
+    return instanceItems.get<ItemType[]>(`/data`,
+      { params: { access_token: GET_POINT_API_KEY } });
   },
   getPoint(params: ParamsType) {
-    return axios.get(
-      `https://api.bigdatacloud.net/data/reverse-geocode-client`, { params });
+    return instancePoints.get('/reverse-geocode-client', { params });
   },
 };
-
-
 

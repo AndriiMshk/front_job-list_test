@@ -18,7 +18,8 @@ export const Detailed = () => {
   const currentItem = data.find(el => el.id === itemId);
 
   const description = currentItem?.description
-    .replaceAll(/[\t]/gi, '').split('\n')
+    .replaceAll(/[\t]/gi, '')
+    .split('\n')
     .map(el => el.trim())
     .filter(Boolean);
 
