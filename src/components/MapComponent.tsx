@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { MapContainer, Marker, TileLayer } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
-import icon1 from '../assets/location.png';
+import icon1 from '../assets/images/location.png';
 
 type MapComponentPropsType = {
   lat: number

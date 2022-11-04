@@ -7,7 +7,7 @@ import { Employment } from './common/Employment';
 import { Benefits } from './common/Benefits';
 import { ReturnButton } from './common/ReturnButton';
 import { MapComponent } from './MapComponent';
-import backgroundCard from '../assets/backgroundCard.png';
+import backgroundCard from '../assets/images/backgroundCard.png';
 
 export const Detailed = () => {
 
