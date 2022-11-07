@@ -14,11 +14,7 @@ export const Items = () => {
 
   const currentData: ItemType[] = [];
 
-  data.forEach((el, index) => {
-    if (index >= currentPage && index < currentPage + 5) {
-      currentData.push(el);
-    }
-  });
+  data.forEach((el, index) => {index >= currentPage && index < currentPage + 5 && currentData.push(el);});
 
   return (
     <>

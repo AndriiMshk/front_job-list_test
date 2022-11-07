@@ -34,7 +34,7 @@ export const Item: FC<ItemPropsType> = ({ item, setError, setIsLoading }) => {
     }
   };
 
-  // useLayoutEffect(() => {getPoint();}, []);
+  useLayoutEffect(() => {getPoint();}, []);
 
   return (
     <div

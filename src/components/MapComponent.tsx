@@ -11,10 +11,7 @@ type MapComponentPropsType = {
 
 export const MapComponent: FC<MapComponentPropsType> = ({ lat, long }) => {
 
-  const icon = L.icon({
-    iconUrl: icon1,
-    iconSize: [30, 38],
-  });
+  const icon = L.icon({ iconUrl: icon1, iconSize: [30, 38] });
 
   return (
     <div className="rounded-b-lg">
