@@ -15,7 +15,6 @@ function App() {
   const [data, setData] = useState<ItemType[]>([]);
   const [error, setError] = useState('');
 
-
   const getItems = async() => {
     try {
       setIsLoading(true);

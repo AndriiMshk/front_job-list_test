@@ -1,20 +1,14 @@
 import React, { FC } from 'react';
-import { PageDataType } from '../api/types';
 
 type PaginationPropsType = {
-  pageData: PageDataType
-  setPageData: (pageData: PageDataType) => void
+  currentPage: number
+  setCurrentPage: (currentPage: number) => void
+  pageCount: number
 }
 
-export const Pagination: FC<PaginationPropsType> = ({ pageData, setPageData }) => {
+export const Pagination: FC<PaginationPropsType> = ({ currentPage, pageCount, setCurrentPage }) => {
 
-  const { pageCount, currentPage } = pageData;
-
-  const goToFirstPageHandler = () => {setPageData({ ...pageData, currentPage: 1 });};
-
-  const goToLastPageHandler = () => {setPageData({ ...pageData, currentPage: pageCount });};
-
-  const goToCurrentPageHandler = (currentPage: number) => {setPageData({ ...pageData, currentPage });};
+  const goTotPageHandler = (currentPage: number) => {setCurrentPage(currentPage);};
 
   const pages = [];
 
@@ -27,7 +21,7 @@ export const Pagination: FC<PaginationPropsType> = ({ pageData, setPageData }) =
       className="flex justify-between items-center sm:w-[515px] h-[52px] bg-backgroundSecondary md:bg-white rounded-lg shadow-[2px_1px_7px_rgba(0,_0,_0,_0.08),_0px_2px_1px_-1px_rgba(0,_0,_0,_0.04),_0px_1px_3px_rgba(0,_0,_0,_0.12)] my-12 px-6">
       <div className="flex justify-between items-center space-x-8">
         <svg
-          onClick={goToFirstPageHandler}
+          onClick={() => {goTotPageHandler(1);}}
           className="hover:cursor-pointer" width="12" height="18" viewBox="0 0 12 18" fill="none"
           xmlns="http://www.w3.org/2000/svg">
           <path fillRule="evenodd" clipRule="evenodd"
@@ -41,7 +35,7 @@ export const Pagination: FC<PaginationPropsType> = ({ pageData, setPageData }) =
       <div className="flex flex-row space-x-2 text-xl mx-2 font-bold text-[#70778B] tracking-widest">
         {pages.map(el =>
           <div
-            onClick={() => goToCurrentPageHandler(el)}
+            onClick={() => {goTotPageHandler(el);}}
             className={el === currentPage
               ? 'text-hoverColor hover:cursor-pointer relative after:w-full after:content-[""] after:absolute after:top-8 after:left-0 after:w-full after:h-0.5 after:bg-hoverColor'
               : 'hover:cursor-pointer'}
@@ -54,7 +48,7 @@ export const Pagination: FC<PaginationPropsType> = ({ pageData, setPageData }) =
           <path d="M0.900781 0.400391V31.6004" stroke="#DEE3EF" strokeWidth="1.3" />
         </svg>
         <svg
-          onClick={goToLastPageHandler}
+          onClick={() => {goTotPageHandler(pageCount);}}
           className="hover:cursor-pointer" width="12" height="18" viewBox="0 0 12 18" fill="none"
           xmlns="http://www.w3.org/2000/svg">
           <path fillRule="evenodd" clipRule="evenodd"

@@ -25,11 +25,6 @@ export type ParamsType = {
   longitude: number
 }
 
-export type PageDataType = {
-  currentPage: number
-  pageCount: number
-}
-
 export type ContextType = {
   data: ItemType[]
   error: string
